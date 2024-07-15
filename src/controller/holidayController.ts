@@ -17,7 +17,7 @@ export const getLeave = async (req: CustomRequest, res: Response) => {
   try {
     const leaveDataRepository = AppDataSource.getRepository(LeaveData);
 
-    // Fetch data from zoho API
+    // Fetch data from zoho API(holiday api)
     const response = await axios.get('https://people.zoho.com/people/api/leave/v2/holidays/get', {
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -93,7 +93,7 @@ export const retryFailedFormsEndpoint = async (req: Request, res: Response) => {
   }
 };
 
-// Schedule the retry process to run every hour
+// Schedule the retry process to run every hour(access token)
 cron.schedule('0 * * * *', async () => {
   console.log('Running scheduled retry process...');
   const accessToken = '1000.c40ace5eccd074edf25147bf0394dc16.d0e923cd78e3a5d358dc3285644adc8d';
