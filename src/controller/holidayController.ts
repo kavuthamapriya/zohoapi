@@ -118,14 +118,14 @@ export const getLeaveById = async (req: Request, res: Response) => {
   }
 };
 
-export const getAllForms = async (req: Request, res: Response) => {
+export const getAllHoliday = async (req: Request, res: Response) => {
   try {
     const leaveDataRepository = AppDataSource.getRepository(LeaveData);
     const leave = await leaveDataRepository.find();
   
     res.json(leave);
   } catch (error) {
-    console.error('Error fetching all forms:', error);
-    res.status(500).json({ error: 'Failed to fetch all forms' });
+    console.error('Error fetching all data:', error);
+    res.status(500).json({ error: 'Failed to fetch all data' });
   }
 };
