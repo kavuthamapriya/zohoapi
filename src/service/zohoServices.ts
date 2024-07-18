@@ -10,8 +10,8 @@ const getAccessTokenFromCode = async (code: string) => {
   try {
     const response = await axios.post('https://accounts.zoho.com/oauth/v2/token', null, {
       params: {
-        client_id: '1000.LRIGQNFWEOPYGX1XP243NDW7B3O7FH',
-        client_secret: 'bed5b1f2584e2dcceb1c5a29a983c88a24b776797b',
+        client_id: '1000.0F6FWQN6ILAOXEHGNUS7DZBIYBCC8E',
+        client_secret: '0417a58a90de13edef0360f8303339a2cf83b685be',
         grant_type: 'authorization_code',
         code: code,
       }
@@ -55,8 +55,8 @@ const refreshToken = async (refreshToken: string) => {
   try {
     const response = await axios.post('https://accounts.zoho.com/oauth/v2/token', null, {
       params: {
-        client_id: '1000.LRIGQNFWEOPYGX1XP243NDW7B3O7FH',
-        client_secret: 'bed5b1f2584e2dcceb1c5a29a983c88a24b776797b',
+        client_id: '1000.0F6FWQN6ILAOXEHGNUS7DZBIYBCC8E',
+        client_secret: '0417a58a90de13edef0360f8303339a2cf83b685be',
         grant_type: 'refresh_token',
         refresh_token: refreshToken,
       },
@@ -83,18 +83,18 @@ const refreshToken = async (refreshToken: string) => {
     throw new Error('failed to refresh token');
   }
 };
-export const updateLeaveStatus = async(id: number, status:LeaveStatus) => {
-  const leaveDataRepository = AppDataSource.getRepository(LeaveData);
-  const leave = await leaveDataRepository.findOne({where:{ id }});
+// export const updateLeaveStatus = async(id: number, status:LeaveStatus) => {
+//   const leaveDataRepository = AppDataSource.getRepository(LeaveData);
+//   const leave = await leaveDataRepository.findOne({where:{ id }});
 
-  if(leave){
-      leave.status = status;
-      await leaveDataRepository.save(leave);
-  }
-  else{
-    console.error(`Form with id ${id} not found`);
-  }
-};
+//   if(leave){
+//       leave.status = status;
+//       await leaveDataRepository.save(leave);
+//   }
+//   else{
+//     console.error(`Form with id ${id} not found`);
+//   }
+// };
 
 export default {
   saveToken,

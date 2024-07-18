@@ -19,8 +19,9 @@ app.get('/',(req,res)=>{
   res.send({message: "success"});
 });
 
-app.post('/api/v2/oauth/token', async (req, res) => {
-  const { code } = req.body;
+app.post('/v2/oauth/token', async (req, res) => {
+//console.log("***",req);
+const  {code} = req.body;
 console.log("***",code);
   if (!code) {
     return res.status(400).json({ error: 'Authorization code is required' });

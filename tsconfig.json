@@ -11,7 +11,8 @@
       "moduleResolution": "node",
       "outDir": "./dist",
       "baseUrl": "./src",
-      "resolveJsonModule": true
+      "resolveJsonModule": true,
+      "strictPropertyInitialization": false
     },
     "include": ["src/**/*.ts","custom.d.ts"],
     "exclude": ["node_modules"]

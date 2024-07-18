@@ -6,7 +6,7 @@ import { Router } from "express";
 const router = Router();
 router.use(refreshTokenMiddleware);
 
-router.post('/forms',getLeave);
+router.get('/leave',getLeave);
 router.get('/getAllHoliday',getAllHoliday);
 router.get('/:id', getLeaveById);
 

@@ -8,7 +8,7 @@ export const AppDataSource = new DataSource({
   port: 5432,
   username: "postgres",
   password: "password",
-  database: "zohoapi",
+  database: "Test",
   synchronize: true,
   logging: false,
   entities: [path.join(process.cwd(), "src/entites/*.ts")],

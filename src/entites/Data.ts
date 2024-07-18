@@ -11,16 +11,16 @@ export enum LeaveStatus{
 @Entity()
 export class LeaveData {
   @PrimaryGeneratedColumn()
-  id: number=0;
+  id: number;
 
   @Column('bigint')
-  componentId: number=0;
+  locationId: number;
 
   @Column()
-  leaveLinkName: string='';
+  Remarks: string;
 
   @Column()
-  PermissionDetails: string='';
+  Name: string;
 
   @Column({
     type:'enum',
@@ -30,8 +30,8 @@ export class LeaveData {
   status: LeaveStatus = LeaveStatus.ADDED;
 
   @Column({default: 0})
-  retryCount: number=0;
+  retryCount: number;
   
   @CreateDateColumn()
-  createdAt: Date= new Date();
+  createdAt: Date;
 }
